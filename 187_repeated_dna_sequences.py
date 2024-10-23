@@ -32,3 +32,26 @@ def findRepeatedDnaSequences(s):
         else:
             substring_freq[substring] = 1
     return result
+
+
+# Time complexity of slicing a string is O(k) where k is the length of the slice
+# So, the time complexity of the above approach is O(n * k), where n is the length of the input string and k is the length of the slice.
+# The space complexity of the above approach is O(n), where n is the length of the input string.
+
+def findRepeatedDnaSequences(s):
+    if len(s) < 10:
+        return []
+    result = set()
+    seen = set()
+    for i in range(len(s) - 9):
+        substring = s[i:i + 10]
+        if substring in seen:
+            result.add(substring)
+        else:
+            seen.add(substring)
+    return list(result)
+
+
+# Time complexity of slicing a string is O(k) where k is the length of the slice
+# So, the time complexity of the above approach is O(n * k), where n is the length of the input string and k is the length of the slice.
+# The space complexity of the above approach is O(n), where n is the length of the input string.
