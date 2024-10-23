@@ -55,3 +55,29 @@ def findRepeatedDnaSequences(s):
 # Time complexity of slicing a string is O(k) where k is the length of the slice
 # So, the time complexity of the above approach is O(n * k), where n is the length of the input string and k is the length of the slice.
 # The space complexity of the above approach is O(n), where n is the length of the input string.
+
+
+
+'''
+Given a string, dna, that represents a DNA subsequence, and a number 
+k
+k
+, return all the contiguous subsequences (substrings) of length 
+k
+k
+ that occur more than once in the string. The order of the returned subsequences does not matter. If no repeated substring is found, the function should return an empty set.
+'''
+
+
+def findRepeatedSubsequences(dna, k):
+    if len(dna) < k:
+        return set()
+    result = set()
+    seen = set()
+    for i in range(len(dna) - k + 1):
+        substring = dna[i:i + k]
+        if substring in seen:
+            result.add(substring)
+        else:
+            seen.add(substring)
+    return result
