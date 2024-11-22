@@ -81,3 +81,5 @@ def findRepeatedSubsequences(dna, k):
         else:
             seen.add(substring)
     return result
+
+
