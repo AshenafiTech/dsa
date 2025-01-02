@@ -8,7 +8,7 @@ for end in range(len(array)):
     curr_s +=  array[end]
     
     while curr_s > s:
-        curr_s -= array[end]
+        curr_s -= array[start]
         start+=1
     max_len = max(max_len, end-start+1)
     
